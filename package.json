@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
-    "build": "parcel build src/copy-button.js --no-source-maps --out-dir dist"
+    "build": "parcel build src/index.js --no-source-maps --dist-dir dist"
   },
   "keywords": [],
   "author": "Alex Bowley",
