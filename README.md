@@ -22,8 +22,7 @@ npm install hljs-copy-button
 In your JavaScript file, import the plugin and CSS:
 
 ```javascript
-import CopyButton from "<your-package-name>";
-import "<your-package-name>/dist/index.css";
+import CopyButton from "hljs-copy-button";
 ```
 
 ### Step 2: Initialize the Plugin
