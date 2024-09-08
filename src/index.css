@@ -1,0 +1,9 @@
+.hljs-custom-copy-wrapper {
+    position: relative;
+}
+
+.hljs-custom-copy-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
