@@ -2,13 +2,17 @@
   "name": "hljs-copy-button",
   "version": "1.0.1",
   "main": "dist/index.js",
+  "module": "dist/hljs-copy-button.es.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "parcel build src/index.js --no-source-maps --dist-dir dist"
+    "build": "vite build --minify"
   },
   "keywords": [],
   "author": "Alex Bowley",
   "description": "A plugin for Highlight.js that adds a copy button to code blocks",
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "vite": "^5.4.3"
   }
 }
