@@ -40,22 +40,29 @@ const copyPlugin = new CopyButton({
 hljs.addPlugin(copyPlugin);
 ```
 
-Options
-- `initialState`: The HTML or SVG content to display in the button's initial state (before copying).
-- `copiedState`: The HTML or SVG content to display after the text has been copied.
-- `callback`: A function executed after the text is copied. It receives the copied text and the button element as parameters.
+## Options
+`initialState`: The HTML or SVG content to display in the button's initial state (before copying).
+`copiedState`: The HTML or SVG content to display after the text has been copied.
+`callback`: A function executed after the text is copied. It receives the copied text and the button element as parameters.
+`includeStyling`: A boolean value to include the default CSS styling. Defaults to `true`.
+`customClasses`: An object of custom classes to add to the button and wrapper elements. Defaults to:
+  `wrapper`: "hljs-custom-copy-wrapper"
+  `button`: "hljs-custom-copy-button"
 
 ## Example
 ```javascript
 const copyPlugin = new CopyButton({
-  initialState: '<span>Copy Code</span>',
+  initialState: '<span>Copy</span>',
   copiedState: '<span>Copied!</span>',
   callback: (text, button) => {
-    alert("Copied to clipboard: " + text);
+    console.log(`Copied text: ${text}`);
+  },
+  includeStyling: true,
+  customClasses: {
+    wrapper: "my-wrapper",
+    button: "my-button"
   }
 });
-
-hljs.addPlugin(copyPlugin);
 ```
 
 ## Default SVGs
@@ -76,20 +83,24 @@ The plugin includes a default CSS file with the following styles:
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    background-color: inherit;
+    background-color: transparent !important;
     color: white;
     border: 1px solid #e1e1e1;
-    padding: 6px 8px;
+    padding: 2px 3px;
     cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
+}
+
+.hljs-custom-copy-button:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .hljs-custom-copy-button:hover {
     box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
 }
 ```
-You can override these styles in your project if needed.
 
 ## License
 MIT License
