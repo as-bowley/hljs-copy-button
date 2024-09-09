@@ -1,6 +1,6 @@
 {
   "name": "hljs-copy-button",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "module": "dist/hljs-copy-button.es.js",
   "files": [
