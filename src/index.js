@@ -24,6 +24,7 @@ class CopyButton {
         }
         .${this.customClasses.button} {
           position: absolute;
+          border: none !important;
           top: 0.5rem;
           right: 0.5rem;
           background-color: transparent !important;
@@ -63,6 +64,8 @@ class CopyButton {
   handleCopy(text, button) {
     if (!navigator.clipboard) {
       console.error("Clipboard API not supported");
+      return;
+    } else if (button.dataset.copied === "true") {
       return;
     }
 
